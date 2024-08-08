@@ -1,0 +1,6 @@
+FrontEnd:
+docker-compose -f docker-compose.dev.yml up
+
+
+Backend:
+docker-compose -f docker-compose.dev.yml up

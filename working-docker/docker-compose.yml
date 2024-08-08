@@ -1,0 +1,32 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    networks:
+      - my_network
+
+  bff:
+    build:
+      context: ./bff
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3001:3001'
+    volumes:
+      - ./bff:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    external: true
