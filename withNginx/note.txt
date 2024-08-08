@@ -1,5 +1,10 @@
 FrontEnd:
-docker-compose -f docker-compose.dev.yml up
+
+Dev:
+  docker-compose -f docker-compose.dev.yml up
+
+Prod:
+  docker-compose --env-file .env.production up --build
 
 
 Backend:
